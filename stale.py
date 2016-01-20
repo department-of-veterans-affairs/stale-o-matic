@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 
-# https://github.com/department-of-veterans-affairs/appeals-pm/issues
-
 from github3 import login
 
 import datetime as dt
