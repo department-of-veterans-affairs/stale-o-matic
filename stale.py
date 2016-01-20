@@ -35,6 +35,12 @@ def overdue(issue):
         if label.name == 'overdue':
             return
     issue.add_labels('overdue')
+    issue.create_comment(
+        """\
+This issue appears to be overdue. I've tagged the issue 'overdue'.
+
+Please update the Bug title and remove the overdue label if the
+deadline has changed.""")
 
 
 if __name__ == "__main__":
