@@ -1,0 +1,6 @@
+---
+applications:
+    - name: stale-o-matic
+      no-route: true
+      instances: 1
+      command: "python stale.py stayalive"

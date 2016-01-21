@@ -43,5 +43,17 @@ Please update the Bug title and remove the overdue label if the
 deadline has changed.""")
 
 
+def main(stayalive=False):
+    while True:
+        process_repos()
+        if not stayalive:
+            break
+        time.sleep(86400)
+
+
+def process_repos():
+    process("department-of-veterans-affairs", "appeals-pm")
+
+
 if __name__ == "__main__":
     process("department-of-veterans-affairs", "appeals-pm")
