@@ -54,6 +54,7 @@ def main(stayalive=False):
 
 def process_repos():
     process("department-of-veterans-affairs", "appeals-pm")
+    process("department-of-veterans-affairs", "test-pm")
 
 
 if __name__ == "__main__":
