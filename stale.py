@@ -53,9 +53,9 @@ def main(stayalive=False):
 
 
 def process_repos():
-    process("department-of-veterans-affairs", "appeals-pm")
     process("department-of-veterans-affairs", "test-pm")
+    process("department-of-veterans-affairs", "appeals-pm")
 
 
 if __name__ == "__main__":
-    process("department-of-veterans-affairs", "appeals-pm")
+    main(*sys.argv[1:])
