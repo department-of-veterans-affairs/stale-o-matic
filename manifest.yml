@@ -4,3 +4,4 @@ applications:
       no-route: true
       instances: 1
       command: "python stale.py stayalive"
+      buildpack: python_buildpack
