@@ -8,12 +8,12 @@ import os
 import re
 
 
-with open(os.path.expanduser("~/.github.key"), 'r') as fd:
-    key = fd.read().strip()
+KEY = os.environ['GITHUB_ACCESS_TOKEN']
+USER = os.environ['GITHUB_USER_NAME']
 
 
 def process(org, repo):
-    github = login('paultag', password=key)
+    github = login(USER, password=KEY)
     repo = github.repository(org, repo)
     for issue in repo.iter_issues(state='open'):
         if not issue.title.endswith(")"):
@@ -29,9 +29,11 @@ def process(org, repo):
 
 
 def overdue(issue):
+    print("Overdue: {}".format(issue.title))
     for label in issue.labels:
         if label.name == 'overdue':
             return
+    print("  (marked as overdue)")
     issue.add_labels('overdue')
     issue.create_comment(
         """\
